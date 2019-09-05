@@ -1,5 +1,5 @@
 {
-  "name": "week-number",
+  "name": "@knutkirkhorn/week-number",
   "version": "1.0.0",
   "description": "Get the ISO 8601 week number of a date",
   "main": "index.js",
