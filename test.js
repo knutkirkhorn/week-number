@@ -10,7 +10,7 @@ test('current date returns a number', t => {
 
 test('input string date returns a number', t => {
     const expectedResult = 'number';
-    const result = typeof weekNumber('September 3, 2019 23:15:30');
+    const result = typeof weekNumber('September 3, 2019 13:33:37');
 
     t.is(result, expectedResult);
 });

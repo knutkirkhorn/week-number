@@ -11,6 +11,13 @@ $ npm install @knutkirkhorn/week-number
 const weekNumber = require('@knutkirkhorn/week-number');
 
 console.log(weekNumber());
+// => 36
+
+console.log(weekNumber(new Date()));
+// => 36
+
+console.log(weekNumber('September 3, 2019 13:33:37'));
+// => 36
 ```
 
 ## API
