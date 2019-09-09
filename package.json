@@ -14,8 +14,8 @@
     "week",
     "number"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Knut Kirkhorn",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Knutakir/week-number/issues"
   },
