@@ -1,5 +1,5 @@
-import test from 'ava';
-import weekNumber from '.';
+const test = require('ava');
+const weekNumber = require('.');
 
 test('current date returns a number', t => {
     const expectedResult = 'number';
