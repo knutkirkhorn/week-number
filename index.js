@@ -6,13 +6,15 @@ const daysInWeek = 7;
 module.exports = date => {
     // If no input date
     if (date === undefined) {
+        // eslint-disable-next-line no-param-reassign
         date = new Date();
     }
 
     if (typeof date === 'string') {
+        // eslint-disable-next-line no-param-reassign
         date = new Date(date);
 
-        if (isNaN(date)) {
+        if (Number.isNaN(date.getTime())) {
             throw new TypeError('String input date is not a valid date');
         }
     }
@@ -32,4 +34,4 @@ module.exports = date => {
     const daysDifference = timeDifference / millisecondsInDay;
 
     return Math.ceil(daysDifference / daysInWeek);
-}
+};
