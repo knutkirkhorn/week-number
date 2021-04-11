@@ -8,6 +8,13 @@ test('current date returns a number', t => {
     t.is(result, expectedResult);
 });
 
+test('new date returns a number', t => {
+    const expectedResult = 'number';
+    const result = typeof weekNumber(new Date());
+
+    t.is(result, expectedResult);
+});
+
 test('input string date returns a number', t => {
     const expectedResult = 'number';
     const result = typeof weekNumber('September 3, 2019 13:33:37');
