@@ -1,4 +1,4 @@
-# week-number [![Build Status](https://travis-ci.org/Knutakir/week-number.svg?branch=master)](https://travis-ci.org/Knutakir/week-number)
+# week-number [![Build Status](https://travis-ci.org/knutkirkhorn/week-number.svg?branch=master)](https://travis-ci.org/knutkirkhorn/week-number)
 > 📅 Get the [ISO 8601](https://en.wikipedia.org/wiki/ISO_week_date) week number of a date
 
 ## Installation
