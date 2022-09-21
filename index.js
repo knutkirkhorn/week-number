@@ -1,9 +1,7 @@
-'use strict';
-
 const millisecondsInDay = 86400000; // 1000ms * 60s * 60m * 24h
 const daysInWeek = 7;
 
-module.exports = date => {
+export default function weekNumber(date) {
     // If no input date
     if (date === undefined) {
         // eslint-disable-next-line no-param-reassign
@@ -34,4 +32,4 @@ module.exports = date => {
     const daysDifference = timeDifference / millisecondsInDay;
 
     return Math.ceil(daysDifference / daysInWeek);
-};
+}

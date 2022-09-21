@@ -1,5 +1,5 @@
 import {expectType} from 'tsd';
-import weekNumber = require('.');
+import weekNumber from '.';
 
 expectType<Date>(weekNumber());
 expectType<Date>(weekNumber(new Date()));

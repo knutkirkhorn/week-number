@@ -2,13 +2,13 @@
 > 📅 Get the [ISO 8601](https://en.wikipedia.org/wiki/ISO_week_date) week number of a date
 
 ## Installation
-```
-$ npm install @knutkirkhorn/week-number
+```sh
+npm install @knutkirkhorn/week-number
 ```
 
 ## Usage
 ```js
-const weekNumber = require('@knutkirkhorn/week-number');
+import weekNumber from '@knutkirkhorn/week-number';
 
 console.log(weekNumber());
 // => 36
@@ -26,6 +26,3 @@ Returns the [ISO 8601](https://en.wikipedia.org/wiki/ISO_week_date) week number 
 
 ## Related
 - [week-number-cli](https://github.com/knutkirkhorn/week-number-cli) - CLI for this module
-
-## License
-MIT © [Knut Kirkhorn](LICENSE)

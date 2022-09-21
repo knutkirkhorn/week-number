@@ -1,5 +1,6 @@
-const test = require('ava');
-const weekNumber = require('.');
+// eslint-disable-next-line import/no-unresolved
+import test from 'ava';
+import weekNumber from './index.js';
 
 test('current date returns a number', t => {
     const expectedResult = 'number';
