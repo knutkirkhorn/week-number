@@ -6,7 +6,8 @@
     "extends": [
         "eslint:recommended",
         "airbnb-base",
-        "plugin:ava/recommended"
+        "plugin:ava/recommended",
+        "plugin:unicorn/recommended"
     ],
     "parserOptions": {
         "ecmaVersion": 2022,

@@ -1,4 +1,4 @@
-const millisecondsInDay = 86400000; // 1000ms * 60s * 60m * 24h
+const millisecondsInDay = 86_400_000; // 1000ms * 60s * 60m * 24h
 const daysInWeek = 7;
 
 export default function weekNumber(date) {
