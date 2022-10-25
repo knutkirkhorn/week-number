@@ -41,14 +41,14 @@ test('yesterday is same or previous week', t => {
 	const resultYesterday = weekNumber.yesterday();
 	const resultToday = weekNumber();
 
-	t.truthy((resultToday === resultYesterday) || (resultToday - resultYesterday === 1))
+	t.true((resultToday === resultYesterday) || (resultToday - resultYesterday === 1))
 })
 
 test('tomorrow is same or next week', t => {
 	const resultTomorrow = weekNumber.tomorrow();
 	const resultToday = weekNumber();
 
-	t.truthy((resultToday === resultTomorrow) || (resultTomorrow - resultToday === 1))
+	t.true((resultToday === resultTomorrow) || (resultTomorrow - resultToday === 1))
 })
 
 test('invalid input throws error', t => {
