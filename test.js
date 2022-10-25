@@ -16,9 +16,23 @@ test('new date returns a number', t => {
 	t.is(result, expectedResult);
 });
 
+test('defaults to today', t => {
+	const resultDefault = typeof weekNumber();
+	const resultExplicit = typeof weekNumber(new Date());
+
+	t.is(resultDefault, resultExplicit);
+});
+
 test('input string date returns a number', t => {
 	const expectedResult = 'number';
 	const result = typeof weekNumber('September 3, 2019 13:33:37');
+
+	t.is(result, expectedResult);
+});
+
+test('input string date returns a week number', t => {
+	const expectedResult = 36;
+	const result = weekNumber('September 3, 2019 13:33:37');
 
 	t.is(result, expectedResult);
 });
