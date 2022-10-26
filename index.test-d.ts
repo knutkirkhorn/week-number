@@ -1,6 +1,8 @@
 import {expectType} from 'tsd';
-import weekNumber from '.';
+import weekNumber, {yesterdayWeekNumber, tomorrowWeekNumber} from '.';
 
-expectType<Date>(weekNumber());
-expectType<Date>(weekNumber(new Date()));
-expectType<Date>(weekNumber('September 3, 2019 13:33:37'));
+expectType<Number>(weekNumber());
+expectType<Number>(weekNumber(new Date()));
+expectType<Number>(weekNumber('September 3, 2019 13:33:37'));
+expectType<Number>(yesterdayWeekNumber());
+expectType<Number>(tomorrowWeekNumber());
