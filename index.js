@@ -34,12 +34,12 @@ export default function weekNumber(date) {
 	return Math.ceil(daysDifference / daysInWeek);
 }
 
-weekNumber.yesterday = function() {
-	const yesderday = Date.now() -  millisecondsInDay
-	return weekNumber(new Date(yesderday))
+export function yesterdayWeekNumber() {
+	const yesterday = Date.now() - millisecondsInDay;
+	return weekNumber(new Date(yesterday));
 }
 
-weekNumber.tomorrow = function() {
-	const tomorrow = Date.now() + millisecondsInDay
-	return weekNumber(new Date(tomorrow))
+export function tomorrowWeekNumber() {
+	const tomorrow = Date.now() + millisecondsInDay;
+	return weekNumber(new Date(tomorrow));
 }

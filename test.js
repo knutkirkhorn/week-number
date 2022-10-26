@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import test from 'ava';
-import weekNumber from './index.js';
+import weekNumber, {yesterdayWeekNumber, tomorrowWeekNumber} from './index.js';
 
 test('current date returns a number', t => {
 	const expectedResult = 'number';
@@ -37,19 +37,61 @@ test('input string date returns a week number', t => {
 	t.is(result, expectedResult);
 });
 
-test('yesterday is same or previous week', t => {
-	const resultYesterday = weekNumber.yesterday();
-	const resultToday = weekNumber();
+test('yesterday is previous week if current day is monday and not at the start of the year', t => {
+	// Mock current time to Monday (September 2, 2019)
+	const realNow = Date.now;
+	Date.now = () => new Date('September 2, 2019').getTime();
 
-	t.true((resultToday === resultYesterday) || (resultToday - resultYesterday === 1))
-})
+	const resultYesterday = yesterdayWeekNumber();
+	const resultGivenDate = weekNumber('September 2, 2019');
 
-test('tomorrow is same or next week', t => {
-	const resultTomorrow = weekNumber.tomorrow();
-	const resultToday = weekNumber();
+	// Restore mocked date
+	Date.now = realNow;
 
-	t.true((resultToday === resultTomorrow) || (resultTomorrow - resultToday === 1))
-})
+	t.is(resultYesterday, resultGivenDate - 1);
+});
+
+test('yesterday is same week if current day is tuesday and not at the start of the year', t => {
+	// Mock current time to Monday (September 2, 2019)
+	const realNow = Date.now;
+	Date.now = () => new Date('September 3, 2019').getTime();
+
+	const resultYesterday = yesterdayWeekNumber();
+	const resultGivenDate = weekNumber('September 2, 2019');
+
+	// Restore mocked date
+	Date.now = realNow;
+
+	t.is(resultYesterday, resultGivenDate);
+});
+
+test('tomorrow is next week if current day is sunday and not at the end of the year', t => {
+	// Mock current time to Sunday (September 8, 2019)
+	const realNow = Date.now;
+	Date.now = () => new Date('September 8, 2019').getTime();
+
+	const resultTomorrow = tomorrowWeekNumber();
+	const resultGivenDate = weekNumber('September 8, 2019');
+
+	// Restore mocked date
+	Date.now = realNow;
+
+	t.is(resultTomorrow, resultGivenDate + 1);
+});
+
+test('tomorrow is same week if current day is saturday and not at the end of the year', t => {
+	// Mock current time to Sunday (September 8, 2019)
+	const realNow = Date.now;
+	Date.now = () => new Date('September 7, 2019').getTime();
+
+	const resultTomorrow = tomorrowWeekNumber();
+	const resultGivenDate = weekNumber('September 7, 2019');
+
+	// Restore mocked date
+	Date.now = realNow;
+
+	t.is(resultTomorrow, resultGivenDate);
+});
 
 test('invalid input throws error', t => {
 	t.throws(() => weekNumber(1337));
