@@ -37,7 +37,7 @@ test('input string date returns a week number', t => {
 	t.is(result, expectedResult);
 });
 
-test('yesterday is previous week if current day is monday and not at the start of the year', t => {
+test.serial('yesterday is previous week if current day is monday and not at the start of the year', t => {
 	// Mock current time to Monday (September 2, 2019)
 	const realNow = Date.now;
 	Date.now = () => new Date('September 2, 2019').getTime();
@@ -51,7 +51,7 @@ test('yesterday is previous week if current day is monday and not at the start o
 	t.is(resultYesterday, resultGivenDate - 1);
 });
 
-test('yesterday is same week if current day is tuesday and not at the start of the year', t => {
+test.serial('yesterday is same week if current day is tuesday and not at the start of the year', t => {
 	// Mock current time to Monday (September 2, 2019)
 	const realNow = Date.now;
 	Date.now = () => new Date('September 3, 2019').getTime();
@@ -65,7 +65,7 @@ test('yesterday is same week if current day is tuesday and not at the start of t
 	t.is(resultYesterday, resultGivenDate);
 });
 
-test('tomorrow is next week if current day is sunday and not at the end of the year', t => {
+test.serial('tomorrow is next week if current day is sunday and not at the end of the year', t => {
 	// Mock current time to Sunday (September 8, 2019)
 	const realNow = Date.now;
 	Date.now = () => new Date('September 8, 2019').getTime();
@@ -79,7 +79,7 @@ test('tomorrow is next week if current day is sunday and not at the end of the y
 	t.is(resultTomorrow, resultGivenDate + 1);
 });
 
-test('tomorrow is same week if current day is saturday and not at the end of the year', t => {
+test.serial('tomorrow is same week if current day is saturday and not at the end of the year', t => {
 	// Mock current time to Sunday (September 8, 2019)
 	const realNow = Date.now;
 	Date.now = () => new Date('September 7, 2019').getTime();
