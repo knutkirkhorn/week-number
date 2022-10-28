@@ -16,6 +16,30 @@ console.log(weekNumber('September 3, 2019 13:33:37'));
 // => 36
 ```
 */
-declare function weekNumber(date: Date | string | void): Date;
+export default function weekNumber(date: Date | string | void): Number;
 
-export = weekNumber;
+/**
+Get the [ISO 8601](https://en.wikipedia.org/wiki/ISO_week_date) week number of yesterday
+@returns Week number of yesterday.
+@example
+```
+import {yesterdayWeekNumber} from '@knutkirkhorn/week-number';
+
+console.log(yesterdayWeekNumber());
+// => 36
+```
+*/
+export function yesterdayWeekNumber(): Number;
+
+/**
+Get the [ISO 8601](https://en.wikipedia.org/wiki/ISO_week_date) week number of tomorrow
+@returns Week number of tomorrow.
+@example
+```
+import {tomorrowWeekNumber} from '@knutkirkhorn/week-number';
+
+console.log(tomorrowWeekNumber());
+// => 36
+```
+*/
+export function tomorrowWeekNumber(): Number;

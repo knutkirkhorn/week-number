@@ -33,3 +33,13 @@ export default function weekNumber(date) {
 
 	return Math.ceil(daysDifference / daysInWeek);
 }
+
+export function yesterdayWeekNumber() {
+	const yesterday = Date.now() - millisecondsInDay;
+	return weekNumber(new Date(yesterday));
+}
+
+export function tomorrowWeekNumber() {
+	const tomorrow = Date.now() + millisecondsInDay;
+	return weekNumber(new Date(tomorrow));
+}
