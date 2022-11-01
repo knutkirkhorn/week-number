@@ -33,7 +33,7 @@
   "homepage": "https://github.com/knutkirkhorn/week-number#readme",
   "devDependencies": {
     "ava": "^5.0.1",
-    "eslint": "^8.23.1",
+    "eslint": "^8.26.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-ava": "^13.2.0",
     "eslint-plugin-import": "^2.26.0",
